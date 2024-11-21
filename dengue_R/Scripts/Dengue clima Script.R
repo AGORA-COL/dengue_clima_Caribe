@@ -40,15 +40,15 @@ dengue_casos <- dengue_ciud_sem %>%
   pivot_wider(names_from = municipio_ocurrencia, values_from = casos, values_fill = 0)
 
 #Cargar datos ambientales
-HR_SM=read.csv("C:/Users/ncbon/Desktop/Dengue climático/HR STA MARTA/HRHG_CON@15015050.data", sep="|", dec = "." )
-HR_CTG=read.csv("C:/Users/ncbon/Desktop/Dengue climático/HR CARTAGENA/HRHG_CON@14015080.data", sep="|", dec = "." )
-HR_BQ=read.csv("C:/Users/ncbon/Desktop/Dengue climático/HR BARRANQUILLA/HRHG_CON@29045120.data", sep="|", dec = "." )
-T_SM=read.csv("C:/Users/ncbon/Desktop/Dengue climático/T STA MARTA/TSSM_MEDIA_D@15015050.data", sep="|", dec = "." )
-T_CTG=read.csv("C:/Users/ncbon/Desktop/Dengue climático/T CARTAGENA/TSSM_MEDIA_D@14015080.data", sep="|", dec = "." )
-T_BQ=read.csv("C:/Users/ncbon/Desktop/Dengue climático/T BARRANQUILLA/TSSM_MEDIA_D@29045120.data", sep="|", dec = "." )
-P_SM=read.csv("C:/Users/ncbon/Desktop/Dengue climático/P STA MARTA/PTPM_CON@15015050.data", sep="|", dec = "." )
-P_CTG=read.csv("C:/Users/ncbon/Desktop/Dengue climático/P CARTAGENA/PTPM_CON@14015080.data", sep="|", dec = "." )
-P_BQ=read.csv("C:/Users/ncbon/Desktop/Dengue climático/P BARRANQUILLA/PTPM_CON@29045120.data", sep="|", dec = "." )
+HR_SM=read.csv("data/HR STA MARTA/HRHG_CON@15015050.data", sep="|", dec = "." )
+HR_CTG=read.csv("data/HR CARTAGENA/HRHG_CON@14015080.data", sep="|", dec = "." )
+HR_BQ=read.csv("data/HR BARRANQUILLA/HRHG_CON@29045120.data", sep="|", dec = "." )
+T_SM=read.csv("data/T STA MARTA/TSSM_MEDIA_D@15015050.data", sep="|", dec = "." )
+T_CTG=read.csv("data/T CARTAGENA/TSSM_MEDIA_D@14015080.data", sep="|", dec = "." )
+T_BQ=read.csv("data/T BARRANQUILLA/TSSM_MEDIA_D@29045120.data", sep="|", dec = "." )
+P_SM=read.csv("data/P STA MARTA/PTPM_CON@15015050.data", sep="|", dec = "." )
+P_CTG=read.csv("data/P CARTAGENA/PTPM_CON@14015080.data", sep="|", dec = "." )
+P_BQ=read.csv("data/P BARRANQUILLA/PTPM_CON@29045120.data", sep="|", dec = "." )
 
 #Establecer formato fecha de .data   
 HR_SM$Fecha <- as.POSIXct(HR_SM$Fecha, format = "%Y-%m-%d %H:%M:%S")
