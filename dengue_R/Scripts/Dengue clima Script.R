@@ -406,4 +406,40 @@ ggplot(head(datos_final,-12), aes(x = datos_final$Casos_SantaMarta[-c(1:12)], y 
                                 size = 3, linewidth = 1, boxlinewidth = 0.4)  + ylim(70,95)+ xlim(0,70)+
                theme_bw() + guides(color = 'none') # remove legend
              
-             
+
+####Poisson Models
+
+# Modelo Barranquilla
+poisson.model.Bquilla_TPH <- glm(Barranquilla[-c(1:12)] ~ head(BAQ.Temperatura.media,-12) + head(BAQ.Lluvia.acumulada,-12) + head(BAQ.Humedad.Relativa,-12),
+                                 family = 'poisson', data = tabla)
+summary(poisson.model.Bquilla_TPH)
+#AIC: 7841.7
+
+poisson.model.Bquilla_TP <- glm(Barranquilla[-c(1:12)] ~ head(BAQ.Temperatura.media,-12) + head(BAQ.Lluvia.acumulada,-12),
+                                family = 'poisson', data = tabla)
+summary(poisson.model.Bquilla_TP)
+#AIC: 8984.3
+
+
+# Modelo Cartagena
+poisson.model.CTG_TPH <- glm(Cartagena[-c(1:12)] ~ head(CTG.Temperatura.media,-12) + head(CTG.Lluvia.acumulada,-12) + head(CTG.Humedad.Relativa,-12),
+                             family = 'poisson', data = tabla)
+summary(poisson.model.CTG_TPH)
+#AIC: 6504.2
+
+poisson.model.CTG_TP <- glm(Cartagena[-c(1:12)] ~ head(CTG.Temperatura.media,-12) + head(CTG.Lluvia.acumulada,-12),
+                            family = 'poisson', data = tabla)
+summary(poisson.model.CTG_TP)
+#AIC: 36438
+
+
+# Modelo Santa Marta
+poisson.model.SM_TPH <- glm(Santa.Marta[-c(1:12)] ~ head(SMR.Temperatura.media,-12) + head(SMR.Lluvia.acumulada,-12) + head(SMR.Humedad.Relativa,-12),
+                            family = 'poisson', data = tabla)
+summary(poisson.model.SM_TPH)
+#AIC: 5510.7
+
+poisson.model.SM_TP <- glm(Santa.Marta[-c(1:12)] ~ head(SMR.Temperatura.media,-12) + head(SMR.Lluvia.acumulada,-12),
+                           family = 'poisson', data = tabla)
+summary(poisson.model.SM_TP)
+#AIC: 8887.8             
